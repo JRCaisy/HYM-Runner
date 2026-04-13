@@ -1,0 +1,18 @@
+{
+  "idle": "A person stands still breathing slowly.",
+  "walk": "A person walks forward naturally.",
+  "run": "A person runs forward naturally.",
+  "jog": "A person jogs forward with relaxed arms.",
+  "jump": "A person jumps upward with both legs once.",
+  "double_jump": "A person jumps upward with both legs twice.",
+  "turn_left": "A person turns left naturally in place.",
+  "turn_right": "A person turns right naturally in place.",
+  "wave": "A person waves one hand while standing.",
+  "salute": "A person gives a soldier salute.",
+  "attack_light": "A person performs a quick light melee attack.",
+  "attack_heavy": "A person performs a heavy melee attack with full body motion.",
+  "hit_react": "A person reacts to getting hit and steps back slightly.",
+  "death": "A person collapses to the ground dramatically.",
+  "crouch_idle": "A person stays in a crouched idle stance.",
+  "crouch_walk": "A person walks forward while crouching."
+}
