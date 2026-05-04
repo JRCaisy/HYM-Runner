@@ -1,0 +1,135 @@
+{
+  "rig": {
+    "name": "needlecrawler",
+    "description": "Quadruped insectoid creature",
+
+    "axes": {
+      "up": "Y",
+      "forward": "-Z",
+      "unit_scale_to_meters": 0.01
+    },
+
+    "skeleton": {
+      "root":   "Armature",
+      "pelvis": "Hips",
+
+      "spine": ["chest"],
+
+      "neck": [],
+      "head": "head",
+      "head_end": "headend",
+
+      "ears": {
+        "left":  "earend",
+        "right": "R_earend"
+      },
+
+      "front_legs": {
+        "_parent_note": "Ön bacaklar chest'in child'ı — compose_idle bunu bilir",
+        "left": {
+          "shoulder": "frontleg",
+          "upper":    "frontleg0",
+          "lower":    "frontleg1",
+          "foot":     "frontleg2",
+          "toe":      null
+        },
+        "right": {
+          "shoulder": "R_frontleg",
+          "upper":    "R_frontleg0",
+          "lower":    "R_frontleg1",
+          "foot":     "R_frontleg2",
+          "toe":      null
+        }
+      },
+
+      "hind_legs": {
+        "left": {
+          "hip":   "backleg",
+          "upper": "backleg0",
+          "lower": "backleg1",
+          "foot":  "backleg2",
+          "toe":   null
+        },
+        "right": {
+          "hip":   "R_backleg",
+          "upper": "R_backleg0",
+          "lower": "R_backleg1",
+          "foot":  "R_backleg2",
+          "toe":   null
+        }
+      },
+
+      "tail": ["tail", "tailstart", "tail1", "tail2", "tail3"]
+    },
+
+    "rest_pose_hint": {
+      "pelvis_height_units": 60.0,
+      "stance": "aggressive"
+    }
+  },
+
+  "profile": {
+    "name": "predatory_stillness",
+
+    "breathing": {
+      "source": "procedural",
+      "frequency_hz": 0.3,
+      "chest_offset_amplitude_units": 1.2,
+      "chest_scale_amplitude": 0.012,
+      "spine_distribution": [1.0]
+    },
+
+    "head_micro_motion": {
+      "yaw_amplitude_deg": 3.0,
+      "pitch_amplitude_deg": 2.0,
+      "frequency_hz": 0.35,
+      "phase_offset_rad": 0.7,
+      "energy_modulation": 0.7
+    },
+
+    "ear_twitch": {
+      "enabled": true,
+      "events_per_minute": 6,
+      "max_amplitude_deg": 8.0,
+      "duration_frames": 4,
+      "candidate_bones": ["earend", "R_earend"],
+      "energy_threshold": 0.2
+    },
+
+    "tail_secondary_motion": {
+      "amplitude_deg": 5.0,
+      "delay_per_segment_frames": 2,
+      "damping": 0.65
+    },
+
+    "leg_twitch": {
+      "enabled": true,
+      "events_per_minute": 3,
+      "max_amplitude_deg": 2.5,
+      "duration_frames": 5,
+      "candidate_bones": ["frontleg2", "R_frontleg2", "backleg2", "R_backleg2"],
+      "energy_threshold": 0.25
+    },
+
+    "weight_shift": {
+      "enabled": true,
+      "amplitude_units": 0.6,
+      "phase_shift_rad": 1.5708
+    },
+
+    "root_lock": {
+      "translation_clamp_units": 0.0,
+      "rotation_clamp_deg": 0.0
+    },
+
+    "loop": {
+      "target_duration_sec": 5.0,
+      "seamless_blend_frames": 15
+    },
+
+    "energy_source": {
+      "type": "hymotion",
+      "curves_json": "curves_v08.json"
+    }
+  }
+}
